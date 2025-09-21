@@ -1,0 +1,25 @@
+.addButton {
+  background-color: #76b7cd;
+  color: #f3f3f3;
+  font: Poppins;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 38px;
+  line-height: 100%;
+  letter-spacing: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 140px;
+  height: 78px;
+  position: absolute;
+  left: 900px;
+  bottom: 1px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border: none;
+  border-radius: 0px 50px 50px 0px;
+}
