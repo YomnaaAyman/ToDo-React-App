@@ -1,0 +1,23 @@
+.inputStyle {
+  display: flex;
+  align-content: center;
+  background-color: #f1ece6;
+  color: #969696;
+  font: Poppins;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 100%;
+  border: none;
+  position: absolute;
+  left: 40px;
+  width: 80%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+}

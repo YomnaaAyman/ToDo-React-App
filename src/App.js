@@ -4,12 +4,13 @@ import Header from "../src/js/Header.js";
 import InputTask from "../src/js/InputTask.js";
 import TasksList from "./js/TasksList.js";
 import ClearButton from "./js/ClearButton.js";
+import Modal from "./js/Model.js";
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (task) => {
-    if (task.trim() === "") return;
+    if (task.trim() === "") return; //no empty tasks allowed
     setTasks([...tasks, task]);
   };
 
@@ -18,50 +19,50 @@ function App() {
     setTasks([]);
   };
 
+  // //delete one task
+  // const deleteTask = (index) => {
+  //   const newTasks = tasks.filter((_, i) => i !== index);
+  //   setTasks(newTasks);
+  // };
+
+  const [showModal, setShowModal] = useState(false);
+  const [taskDelete, setTaskDelete] = useState(null);
+
+  function handleDeleteButton(index) {
+    setTaskDelete(index);
+    setShowModal(true);
+  }
+
+  function confirmDelete() {
+    if (taskDelete != null) {
+      setTasks(tasks.filter((_, i) => i !== taskDelete));
+      setTaskDelete(null);
+      setShowModal(false);
+    }
+  }
+
+  function cancelDelete() {
+    setTaskDelete(null);
+    setShowModal(false);
+  }
+
   return (
     <div className="App">
       <Header />
       {/* ADDING TASKS */}
-      <div
-        style={{
-          backgroundColor: "#F1ECE6",
-          width: "1040px",
-          height: "78px",
-          border: "none",
-          borderRadius: "50px",
-          position: "absolute",
-          top: "213px",
-          left: "200px",
-        }}
-      >
+      <div className="fullPage">
         <InputTask onAdd={addTask} />
         <div>
-          {tasks.length == 0 ? (
-            <p
-              style={{
-                backgroundColor: "#F1ECE6",
-                color: "#969696",
-                font: "Poppins",
-                fontWeight: "400",
-                fontStyle: "normal",
-                fontSize: "36px",
-                lineHeight: "100%",
-                border: "none",
-                position: "absolute",
-                left: "25%",
-                top: "280%",
-              }}
-            >
-              No Tasks Yet - add your first one !
-            </p>
-          ) : (
-            <TasksList tasks={tasks} />
-          )}
+          <TasksList tasks={tasks} onDelete={handleDeleteButton} />
         </div>
       </div>
-      {/* ADDING TASKS */}
-
+      {/* clear all button appears only when there is 1 task or more */}
       {tasks.length > 0 && <ClearButton onClear={clearTasks} />}
+      <Modal
+        isVisible={showModal}
+        Confirm={confirmDelete}
+        Cancel={cancelDelete}
+      />
     </div>
   );
 }

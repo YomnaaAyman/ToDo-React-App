@@ -28,6 +28,20 @@
   color: #61dafb;
 }
 
+.fullPage {
+  background-color: #f1ece6;
+  width: 1040px;
+  height: 78px;
+  border: none;
+  border-radius: 50px;
+  position: absolute;
+  top: 213px;
+  left: 200px;
+  display: flec;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
