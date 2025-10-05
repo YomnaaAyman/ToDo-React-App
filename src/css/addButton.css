@@ -4,22 +4,21 @@
   font: Poppins;
   font-weight: 600;
   font-style: SemiBold;
-  font-size: 38px;
+  font-size: 2.5rem;
   line-height: 100%;
   letter-spacing: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 140px;
-  height: 78px;
+  width: 20%;
+  height: 110%;
   position: absolute;
-  left: 900px;
-  bottom: 1px;
-  padding: 10px;
+  left: 58rem;
+  top: 0.0011rem;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 2rem;
   border: none;
   border-radius: 0px 50px 50px 0px;
 }

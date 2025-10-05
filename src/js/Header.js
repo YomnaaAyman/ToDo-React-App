@@ -1,26 +1,27 @@
 import ToDoLogo from "../assets/ToDoLogo.png";
+import "../css/header.css";
 
-export default function Header() {
+export default function Header({ activeTab, onChange }) {
   return (
-    <div
-      style={{
-        backgroundColor: "#F1ECE6",
-        width: "100%",
-        height: "100px",
-      }}
-    >
+    <div className="header">
       {/* To Do Logo */}
-      <img
-        src={ToDoLogo}
-        alt="Logo"
-        style={{
-          width: "230.77px",
-          height: "60px",
-          position: "absolute",
-          top: "20px",
-          left: "605px",
-        }}
-      />
+      <img src={ToDoLogo} alt="Logo" className="headerLogo" />
+
+      <div className="buttonsContainer">
+        <button
+          className={`${activeTab === "personal" ? "active" : ""}`}
+          onClick={() => onChange("personal")}
+        >
+          Personal
+        </button>
+
+        <button
+          className={`${activeTab === "professional" ? "active" : ""}`}
+          onClick={() => onChange("professional")}
+        >
+          Professional
+        </button>
+      </div>
     </div>
   );
 }

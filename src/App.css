@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -29,17 +32,13 @@
 }
 
 .fullPage {
-  background-color: #f1ece6;
-  width: 1040px;
-  height: 78px;
+  width: 65rem;
+  height: 4.875rem;
   border: none;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   position: absolute;
-  top: 213px;
-  left: 200px;
-  display: flec;
-  justify-content: center;
-  align-items: center;
+  top: 13.3125rem;
+  left: 12.5rem;
 }
 
 @keyframes App-logo-spin {

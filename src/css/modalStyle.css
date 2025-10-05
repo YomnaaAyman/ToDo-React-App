@@ -1,23 +1,25 @@
 #modal {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
-  /* blur black effect behind the pop up message "modal" */
+  position: fixed;
+  top: 10%;
+  left: 0%;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* blur black effect behind the pop up message "modal" */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40%;
 }
 
 #modal-content {
   background-color: rgb(243, 215, 197);
   color: rgba(0, 0, 0, 0.63);
-  width: 100%;
+  width: 90%;
+  padding: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border-radius: 25px;
+  border-radius: 2rem;
 }
 
 .buttonsContainer {
@@ -27,9 +29,10 @@
 }
 
 .btn {
-  padding: 10px 20px;
-  margin: 20px 50px;
-  font-size: 22px;
+  padding: 0.625rem 1.25rem;
+  margin: 1.25rem 3.125rem;
+  font-size: 1.375rem;
   border: none;
-  border-radius: 20px;
+  border-radius: 1.25rem;
+  cursor: pointer;
 }

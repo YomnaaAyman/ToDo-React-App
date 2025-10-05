@@ -1,19 +1,19 @@
 .clearAll {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 150px;
-  height: 80px;
-  position: absolute;
-  left: 120px;
-  top: 250px;
-  padding: 20px 10px 20px 10px;
-  gap: 10px;
-  font: Poppins;
-  font-weight: 400;
-  font-size: 24px;
-  font-style: normal;
   color: #d98326;
   background-color: antiquewhite;
   border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 17rem;
+  height: 5rem;
+  position: absolute;
+  left: 15rem;
+  top: 60rem;
+  padding: 1.25rem 0.625rem 1.25rem 0.625rem;
+  gap: 0.625rem;
+  font: Poppins;
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-style: normal;
 }

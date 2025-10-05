@@ -1,42 +1,61 @@
 import "../css/taskListStyle.css";
-import { useState } from "react";
-import Modal from "./Model";
+// import { tasksContext } from "./Context";
+// import { useContext } from "react";
 
-export default function TasksList({ tasks, onDelete }) {
-  const [finished, setTaskFinished] = useState(false);
-
+export default function TasksList({ tasks, onDelete, onToggle }) {
+  // const tasks = useContext(tasksContext);
   return (
+    // <tasksContext.Provider value={tasks}>
     <div className="tasksContainer">
       {tasks.length === 0 ? (
         <p className="noTasksYet">No Tasks Yet - add your first one !</p>
       ) : (
         <ul className="displayedItems">
-          {tasks.map((task, index) => (
-            <li key={index} className="taskStyle">
-              {task}
-              <label className="checkBoxClass">
-                <input
-                  type="checkbox"
-                  checked={finished}
-                  onChange={(e) => {
-                    setTaskFinished({ finished: e.target.value });
-                  }}
-                ></input>
-              </label>
+          {tasks.map((task, index) => {
+            const checkClass = task.finished ? "checked" : "taskStyle";
+            return (
+              <li key={index} className="taskStyle" id={checkClass}>
+                <div className="checkboxText">
+                  <label className="checkBoxClass">
+                    <input
+                      type="checkbox"
+                      checked={task.finished}
+                      onChange={() => onToggle(index)}
+                    ></input>
+                  </label>
 
-              <button onClick={onDelete} className="deleteButton">
-                Delete
-              </button>
-            </li>
-          ))}
+                  {task.task}
+                </div>
+                <button
+                  onClick={() => onDelete(index)}
+                  className="deleteButton"
+                >
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g opacity="0.3" clip-path="url(#clip0_2186_212)">
+                      <path
+                        d="M7.99999 25.3333C7.99999 26.8 9.19999 28 10.6667 28H21.3333C22.8 28 24 26.8 24 25.3333V9.33333H7.99999V25.3333ZM10.6667 12H21.3333V25.3333H10.6667V12ZM20.6667 5.33333L19.3333 4H12.6667L11.3333 5.33333H6.66666V8H25.3333V5.33333H20.6667Z"
+                        fill="#B30B04"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2186_212">
+                        <rect width="32" height="32" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </li>
+            );
+          })}
         </ul>
       )}
-      {/* <Modal
-        isVisible={showModal}
-        Confirm={confirmDelete}
-        Cancel={cancelDelete}
-      />
-      ; */}
     </div>
+    // </tasksContext.Provider>
   );
 }

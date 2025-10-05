@@ -1,27 +1,30 @@
 .taskStyle {
-  margin: 10px;
-  padding: 20px;
-  border-bottom: 2px solid #76b7cd;
-  border-radius: 12px;
+  margin: 2%;
+  padding: 2%;
+  border-bottom: 0.1rem solid #76b7cd;
+  border-radius: 0.1rem;
   font: Poppins;
-  font-size: 30px;
+  font-size: 1.6rem;
   color: #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .noTasksYet {
   background-color: #f1ece6;
   color: #969696;
   font: Poppins;
   font-weight: 400;
   font-style: normal;
-  font-size: 36px;
+  font-size: 2.3rem;
   line-height: 100%;
+  height: 2rem;
+  width: 35rem;
   border: none;
   position: absolute;
   left: 25%;
-  top: 350%;
+  top: 500%;
 }
 
 .displayedItems {
@@ -34,16 +37,17 @@
 
 .tasksContainer {
   background-color: #f1ece6;
-  width: 1040px;
-  height: 1000px;
-  margin-top: 80px;
-  border-radius: 50px;
+  width: 100%;
+  height: 60rem;
+  margin-top: 5rem;
+  border-radius: 3.25rem;
   padding: 20px;
   overflow-y: auto;
+  margin-top: 5rem;
 }
 
 .deleteButton {
-  background-color: coral;
+  background-color: #f1ece6;
   padding: 2%;
   width: 13%;
   font-size: 24px;
@@ -53,12 +57,20 @@
 .checkBoxClass {
   display: flex;
   flex-direction: row;
-  transform: scale(2.5);
-  position: absolute;
-  right: 250px;
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 0.2rem solid #737373;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+  margin-right: 1.5rem;
 }
-label {
-  margin: 10px 0 5px;
-  font-weight: bold;
-  font-size: 10px;
+
+#checked {
+  text-decoration: line-through;
+}
+
+.checkboxText {
+  display: flex;
+  flex-direction: row;
 }

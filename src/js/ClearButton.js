@@ -3,19 +3,16 @@ export default function ClearButton({ onClear }) {
   return (
     <div
       style={{
-        backgroundColor: "#F1ECE6",
-        width: "275.82px",
-        height: "76px",
         position: "absolute",
-        top: "950px",
-        left: "888px",
+        top: "65%",
+        left: "48%",
         border: "none",
       }}
     >
       <button className="clearAll" onClick={onClear}>
         <svg
-          width="28"
-          height="34"
+          width="30"
+          height="40"
           viewBox="0 0 28 34"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -27,12 +24,12 @@ export default function ClearButton({ onClear }) {
         </svg>
         <div
           style={{
-            width: "99px",
-            height: "36px",
-            paddingTop: "5px",
+            width: "100%",
+            height: "100%",
+            paddingTop: "3.5%",
           }}
         >
-          Clear All
+          Clear Completed
         </div>
       </button>
     </div>
